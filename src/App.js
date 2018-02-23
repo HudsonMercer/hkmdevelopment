@@ -4,7 +4,9 @@ import { Container, Button } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 const HeaderContainer = () => (
-  {empty: true}
+  <Container>
+    
+  </Container>
 )
 
 export default class App extends Component {
