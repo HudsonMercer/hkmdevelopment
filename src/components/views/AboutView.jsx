@@ -1,12 +1,14 @@
-
 import React, { Component } from 'react'
+import {
+  Segment,
+} from 'semantic-ui-react'
 
 export default class AboutView extends Component {
   render(){
     return(
-      <div>
+      <Segment inverted>
         This is the about page lol.
-      </div>
+      </Segment>
     )
   }
 }
