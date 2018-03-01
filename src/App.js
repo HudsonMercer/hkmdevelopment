@@ -6,6 +6,7 @@ import {
   Button,
   Header,
   Menu,
+  Visibility,
 } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import RouteTest from './RouteTest'
@@ -21,71 +22,100 @@ class HeaderContainer extends Component{
     this.state = {activeTab: 'home'}
   }
 
-  setActiveTab =  (target) => {
+  setActiveTab =  (e, {name}) => {
     this.setState({
       ...this.state,
-      activeTab: target
+      activeTab: name
+    })
+  }
+
+  setFixed =  () => {
+    this.setState({
+      ...this.state,
+      fixed: true,
+    })
+  }
+
+  setUnfixed = () => {
+    this.setState({
+      ...this.state,
+      fixed: false,
     })
   }
 
   render(){
+    const fixed = this.state.fixed
     return(
-      <Container fluid>
-        <Segment
-          inverted
-          vertical
-          size="massive"
-          textAlign="center"
-        >
-          <Container>
+
+        <Visibility once={false} onBottomPassed={this.setFixed} onBottomPassedReverse={this.setUnfixed}>
+          <Segment
+            inverted
+            vertical
+            size="massive"
+            textAlign="center"
+          >
             <Menu
-              fixed
-              inverted
+              inverted={!fixed}
+              fluid
+              fixed={fixed ? 'top' : null}
             >
-              <Link to="/about">
-                <Menu.Item
-                  content="About"
-                  onClick={() => this.setActiveTab('about')}
-                  active={this.state.activeTab === 'about' ? true : false}
-                />
-              </Link>
+              <Menu.Item
+                style={{display: fixed ? null : 'none'}}
+                name="/"
+                as={Link}
+                to="/"
+                content="Home"
+                onClick={this.setActiveTab}
+                active={this.state.activeTab === '/' ? true : false}
+              />
+              <Menu.Item
+                name="about"
+                as={Link}
+                to="/about"
+                content="About"
+                onClick={this.setActiveTab}
+                active={this.state.activeTab === 'about' ? true : false}
+              />
 
-              <Link to="/work">
-                <Menu.Item
-                  content="Work"
-                  onClick={() => this.setActiveTab('work')}
-                  active={this.state.activeTab === 'work' ? true : false}
-                />
-              </Link>
+              <Menu.Item
+                name="work"
+                as={Link}
+                to="/work"
+                content="Work"
+                onClick={this.setActiveTab}
+                active={this.state.activeTab === 'work' ? true : false}
+              />
 
-              <Link to="/projects">
-                <Menu.Item
-                  content="Projects"
-                  onClick={() => this.setActiveTab('projects')}
-                  active={this.state.activeTab === 'projects' ? true : false}
-                />
-              </Link>
+              <Menu.Item
+                name="projects"
+                as={Link}
+                to="/projects"
+                content="Projects"
+                onClick={this.setActiveTab}
+                active={this.state.activeTab === 'projects' ? true : false}
+              />
 
-              <Link to="/contact" position="right">
-                <Menu.Item
-                  content="Contact"
-                  onClick={() => this.setActiveTab('contact')}
-                  active={this.state.activeTab === 'contact' ? true : false}
-                  floated="right"
-                />
-              </Link>
+              <Menu.Item
+                name="contact"
+                as={Link}
+                to="/contact"
+                content="Contact"
+                onClick={this.setActiveTab}
+                active={this.state.activeTab === 'contact' ? true : false}
+                floated="right"
+              />
+
             </Menu>
-          </Container>
-          <Link to="/">
-            <Header
-              as="h1"
-              content="HKM Dev"
-              inverted
-              onClick={() => this.setActiveTab('home')}
-            />
-          </Link>
-        </Segment>
-      </Container>
+            <Link to="/">
+              <Header
+                content="BECAUSE THIS ROBOT LAND IS INSANE"
+                inverted
+                onClick={this.setActiveTab === '/' ? true : false}
+              />
+            </Link>
+          </Segment>
+        </Visibility>
+
     )
   }
 }
@@ -102,7 +132,6 @@ export default class App extends Component {
           <Route path="/contact" component={ContactView}/>
           <Route exact path="/" component={HomeView}/>
         </div>
-
       </Router>
     )
   }
