@@ -131,6 +131,7 @@ export default class App extends Component {
           <Route path="/projects" component={ProjectsView}/>
           <Route path="/contact" component={ContactView}/>
           <Route exact path="/" component={HomeView}/>
+          <Container fluid text textAlign="center">{Math.floor(new Date().getFullYear() +Math.random()*100)}©</Container>
         </div>
       </Router>
     )
