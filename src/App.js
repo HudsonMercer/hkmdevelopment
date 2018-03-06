@@ -9,7 +9,6 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import RouteTest from './RouteTest'
 import AboutView from './components/views/AboutView'
 import WorkView from './components/views/WorkView'
 import ContactView from './components/views/ContactView'
@@ -55,8 +54,11 @@ class HeaderContainer extends Component{
             textAlign="center"
           >
             <Menu
+              style={{backgroundColor: fixed ? 'white' : 'rgb(27, 28, 29)'}}
               inverted={!fixed}
               fluid
+              pointing
+              secondary
               fixed={fixed ? 'top' : null}
             >
               <Menu.Item

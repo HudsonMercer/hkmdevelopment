@@ -18,11 +18,16 @@ import firebaseImg from '../../res/images/firebase.svg'
 import sassImg from '../../res/images/sass.svg'
 import jqueryImg from '../../res/images/jquery.svg'
 import semanticImg from '../../res/images/semantic-ui.svg'
+import codeImg from '../../res/images/code.png'
 
 export default class ProjectsView extends Component{
   render(){
     return(
       <Container>
+
+        <Divider horizontal>
+          Recent Projects
+        </Divider>
         <Segment>
           <Grid>
             <Grid.Row>
@@ -65,7 +70,7 @@ export default class ProjectsView extends Component{
             </Grid.Row>
           </Grid>
         </Segment>
-
+        <Divider/>
         <Segment>
           <Grid>
             <Grid.Row>
@@ -130,7 +135,7 @@ export default class ProjectsView extends Component{
             </Grid.Row>
           </Grid>
         </Segment>
-
+        <Divider/>
         <Segment>
           <Grid>
             <Grid.Row>
