@@ -35,8 +35,9 @@ export default class HomeView extends Component{
             This really isn't working how I had imagined it...
             This is the home Page.
           </Segment>
+
           {this.sampleText()}
-          {this.sampleText()}
+          <div>{this.sampleText()}</div>
           {this.sampleText()}
         </Container>
       </div>

@@ -1,11 +1,25 @@
 import React, { Component } from 'react'
+import {
+  Progress,
+  Container,
+  Divider,
+  Segment,
+} from 'semantic-ui-react'
 
 export default class WorkView extends Component{
   render(){
     return(
-      <div>
-        The work I have done, all of it here, gr8 b8 m8.
-      </div>
+      <Container id="work">
+        <Divider horizontal>
+          Work Experience
+        </Divider>
+        <Segment>
+          <h1 style={{textAlign: 'center'}}>
+            404 Experience Not Found.
+          </h1>
+          <Progress percent={5} indicating size="large"></Progress>
+        </Segment>
+      </Container>
     )
   }
 }
