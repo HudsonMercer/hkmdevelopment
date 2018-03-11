@@ -25,13 +25,12 @@ export default class HomeView extends Component{
   render(){
     return(
       <div>
-        {this.sampleText()}
-        <Container Text>
+        <Container >
           <Segment>
             <Label ribbon color="blue" content="Ribbons are cool"/>
             test3
             test
-            <Divider content="Some Booleans"/>
+            <Divider section content="Some Booleans"/>
             This really isn't working how I had imagined it...
             This is the home Page.
           </Segment>

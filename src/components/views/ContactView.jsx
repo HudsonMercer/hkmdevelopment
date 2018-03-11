@@ -29,21 +29,19 @@ export default class ContactView extends Component{
   render(){
     return(
       <Container id="contact">
-        <Divider horizontal>
+        <Divider section horizontal>
           Contact Information
         </Divider>
         <Segment>
 
           <Button
             color="red"
-            floated="left"
             content={this.state.phone}
             onClick={this.getPhoneNumber}
           />
 
           <Button
             color="blue"
-            floated="center"
             content="EMAIL"
             onClick={this.tryEmail}
           />

@@ -10,9 +10,11 @@ export default class AboutView extends Component {
     return(
       <Container id="about">
         <Divider content="About Me" as="h1" horizontal/>
-        <Segment>
-          Oh, hello. I'm a guy, I do nerd things with javascript and make interwebs.
-        </Segment>
+        <h4>
+          <p>
+            Oh, hello. I'm a guy, I do nerd things with javascript and make interwebs.
+          </p>
+        </h4>
       </Container>
     )
   }

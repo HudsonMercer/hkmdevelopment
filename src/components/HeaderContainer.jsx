@@ -77,7 +77,7 @@ export default class HeaderContainer extends Component{
                   onClick={this.setActiveTab}
                   active={this.state.activeTab === 'projects' ? true : false}
                 />
-                
+
                 <Menu.Item
                   name="work"
                   content="Work"
@@ -99,7 +99,6 @@ export default class HeaderContainer extends Component{
               <Header
                 content="BECAUSE THIS ROBOT LAND IS INSANE"
                 inverted
-                onClick={this.setActiveTab === '/' ? true : false}
               />
             </Container>
           </Segment>
