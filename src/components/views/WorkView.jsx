@@ -3,7 +3,6 @@ import {
   Progress,
   Container,
   Divider,
-  Segment,
 } from 'semantic-ui-react'
 
 export default class WorkView extends Component{

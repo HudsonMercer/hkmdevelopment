@@ -3,14 +3,11 @@ import {
   Container,
   Divider,
   Segment,
-  Button,
   Header,
-  Menu,
   Visibility,
   Label,
   Image,
   Grid,
-  Transition,
 } from 'semantic-ui-react'
 import image from '../../res/images/image.png'
 import reactImg from '../../res/images/react.svg'
@@ -19,7 +16,7 @@ import firebaseImg from '../../res/images/firebase.svg'
 import sassImg from '../../res/images/sass.svg'
 import jqueryImg from '../../res/images/jquery.svg'
 import semanticImg from '../../res/images/semantic-ui.svg'
-import codeImg from '../../res/images/code.png'
+// import codeImg from '../../res/images/code.png'
 
 export default class ProjectsView extends Component{
 
@@ -300,8 +297,6 @@ export default class ProjectsView extends Component{
     </Visibility>
   )
   render(){
-
-    const {HKMDev, ticTacToeReact, ticTacToeJQuery, hangman} = this.state
 
     return(
 

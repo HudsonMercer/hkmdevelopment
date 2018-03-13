@@ -11,6 +11,20 @@ export default class HeaderContainer extends Component{
   constructor(){
     super()
     this.state = {activeTab: 'top'}
+    this.titleText = [
+      'HKM Development',
+      'Interwebs, on Demand',
+      '"Obsolete Comments are Worse Than no Comments."',
+      '"undefined and NaN are not Constants."',
+      '"JavaScript is a Language With More Than its Share of Bad Parts."',
+      '"Global Scope is Like a Public Toilet. You can’t avoid it, but try to limit your contact with surfaces when you use it."',
+      '"Lets configure webpack-dev-server for fun." - Nobody',
+      '"You should definitely use jQuery, it’s really great and does all things."',
+      'NPM - No Particular Meaning',
+      'Nobody Uses Titles Anymore',
+      'The Difference Between Winners and Losers is Quitters.',
+      'If You Know Exactly What to do, You aren’t Learning Anything.'
+    ]
   }
 
   setActiveTab =  (e, {name}) => {
@@ -97,8 +111,9 @@ export default class HeaderContainer extends Component{
 
               </Menu>
               <Header
-                content="BECAUSE THIS ROBOT LAND IS INSANE"
+                content={this.titleText[Math.floor(Math.random()*this.titleText.length)]}
                 inverted
+                onClick={this.state.activeTab === '/' ? this.setActiveTab : null}
               />
             </Container>
           </Segment>
